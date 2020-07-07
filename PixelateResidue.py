@@ -1,7 +1,7 @@
 from Bio.PDB.Vector import Vector
 import numpy as np
 
-""" pixelate each residue and its neighbors """
+""" pixelate each residue and its neighbors把每个残基及其邻居像素化 """
 
 """ atom name """
 ATOMS_NAME = ['P', 'OP1', 'OP2', 'O5\'', 'C5\'', 'C4\'', 'C3\'', 'O3\'',
@@ -130,7 +130,7 @@ def check_if_lacking_atoms(res, atomname):
 
 
 def calc_local_reference(res, local_ref):
-    """calculate the local reference system based on the centered residue.
+    """calculate the local reference system based on the centered residue.基于中心残基计算局部参考系
     local_ref is a list of ori, vx, vy, vz. """
 
     if check_if_lacking_atoms(res, 'C1\''):
@@ -170,7 +170,7 @@ def calc_local_reference(res, local_ref):
 
 
 def lattice_1d_point(dis, int_coord, prob):
-    """ lattice a 1d point """
+    """ lattice a 1d point 一维点阵"""
 
     int_coord[0] = int((dis + HALF_BIN_WIDTH)/BIN_WIDTH) - 1
     prob[0] = ((int_coord[0] + 1) * BIN_WIDTH + HALF_BIN_WIDTH - dis)\
@@ -267,7 +267,7 @@ def is_tail_residue(residue_list, res_index, residue):
 
 
 def pixelate_atoms_in_box(model, pixels):
-    """ pixelate atoms in residue-centered box by BINWIDTH """
+    """ pixelate atoms in residue-centered box by BINWIDTH用 BINWIDTH 方法研究残基中心盒中的像素原子 """
 
     residues = list(model.get_residues())
 
