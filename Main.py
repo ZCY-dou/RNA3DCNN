@@ -15,7 +15,7 @@ def load_CNN_model(model_name):
 
 
 def preprocess_input(input_pixels):
-    """ preprocess input of CNN """
+    """ preprocess input of CNN（预处理输入）pixels-像素 """
 
     input_pixels[:, 1] /= 31.0
     input_pixels[:, 2] += 1.0
@@ -46,7 +46,7 @@ if __name__ == '__main__':
     cnn_model_name = sys.argv[4]
     cnn_model = load_CNN_model(cnn_model_name)
     cnn_model.summary()
-
+"""sys.argv[]是一个列表，项为用户从外部输入的参数，是用来获取命令行参数的(参数和参数之间空格区分) , sys.argv[0]表示代码本身文件路径,所以从参数1开始,表示获取的参数了"""
     for RNA in pdblist:
         p = PDBParser(QUIET=True)
         s = p.get_structure(RNA, RNA)
