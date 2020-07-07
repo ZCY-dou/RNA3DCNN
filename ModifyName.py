@@ -29,6 +29,7 @@ def modify_residue_atom_name(residues):
     """ change '*' in atom name into '\''
         change 'O1P' into 'OP1'
         change 'O2P' into 'OP2'
+        修改名字，变为标准统一的名字
     """
     for residue in residues:
         if residue.resname in DICT_RES_NAME:
